@@ -39,3 +39,25 @@
   .hero .site-logo,
   .site-logo { width: min(65vw, 390px); max-height: none; }
 }
+
+/* Identidade final: fundo branco e marca original preta. */
+:root { --ivory:#ffffff; --paper:#ffffff; --ink:#282526; }
+body { background:#ffffff; }
+.intro, .hero { background:#ffffff !important; color:#282526 !important; }
+.intro__fallback { color:#282526; }
+.intro__fallback .eyebrow, .hero .eyebrow { color:#7a1304; }
+.intro__fallback p:not(.eyebrow), .hero .hero__date { color:#282526 !important; }
+.hero .lead { color:#615b57 !important; }
+.hero .button.primary { background:#7a1304; border-color:#7a1304; color:#ffffff; }
+.skip { color:#282526; background:#ffffff; border:1px solid #7a1304; }
+.site-logo, .intro__fallback .site-logo, .hero .site-logo {
+  display:block; width:min(84vw,760px); height:auto; max-width:100%;
+  max-height:none; object-fit:contain; margin:0 auto; filter:none;
+}
+.intro__fallback { width:100%; padding:20px; gap:8px; }
+@media(max-width:700px) {
+ .site-logo,.intro__fallback .site-logo,.hero .site-logo { width:min(92vw,520px); }
+}
+@media(max-height:650px) {
+ .intro__fallback .site-logo,.hero .site-logo { width:min(70vw,550px); }
+}
