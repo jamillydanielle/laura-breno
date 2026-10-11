@@ -30,47 +30,8 @@
 </object>
 <a class="pdf-link" href="./../assets/Laura%20%26%20Breno%2019.12.26%20-%20Celebra%C3%A7%C3%A3o.pdf" target="_blank" rel="noopener">Abrir convite em PDF</a>
 </section>
-<section class="rsvp" id="confirmar">
-<button class="button" id="rsvpButton" type="button" aria-expanded="false" aria-controls="rsvpForm">Confirmar presença</button>
-<form id="rsvpForm" class="rsvp-form" hidden>
-<label for="guestNames">Nome das pessoas que irão ao casamento</label>
-<textarea id="guestNames" name="guestNames" required maxlength="600" placeholder="Digite um nome por linha&#10;Ex.: Maria Silva&#10;João Silva"></textarea>
-<small>Informe o nome de cada pessoa em uma linha. Ao continuar, o WhatsApp abrirá com a mensagem pronta para enviar.</small>
-<button class="button" type="submit">Continuar pelo WhatsApp</button>
-</form>
-<p class="feedback" id="rsvpMessage" role="status"></p>
-</section>
+<section class="rsvp" id="confirmar"><a class="button" href="../confirmar-presenca/" style="text-decoration:none;display:inline-block">Confirmar presença</a></section>
 </main>
-<script>
-const WHATSAPP_NUMBER = ""; // Configure com DDI + DDD + número. Exemplo: 5531999999999
-const openFormButton = document.getElementById("rsvpButton");
-const form = document.getElementById("rsvpForm");
-const message = document.getElementById("rsvpMessage");
-const namesField = document.getElementById("guestNames");
-openFormButton.addEventListener("click", () => {
-  const showing = form.hidden;
-  form.hidden = !showing;
-  openFormButton.setAttribute("aria-expanded", String(showing));
-  if (showing) namesField.focus();
-});
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const names = namesField.value.split(/[\n,;]+/).map(name => name.trim()).filter(Boolean);
-  if (!names.length) {
-    message.textContent = "Informe pelo menos um nome para confirmar a presença.";
-    namesField.focus();
-    return;
-  }
-  if (!/^\d{12,15}$/.test(WHATSAPP_NUMBER)) {
-    message.textContent = "O número do WhatsApp de confirmação ainda precisa ser configurado.";
-    return;
-  }
-  message.textContent = "";
-  const guests = names.map((name, index) => (index + 1) + ". " + name).join("\n");
-  const text = "Oi, quero confirmar a presença na celebração de casamento.\n\nPessoas confirmadas:\n" + guests;
-  const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text);
-  window.location.href = url;
-});
-</script>
+
 </body>
 </html>
