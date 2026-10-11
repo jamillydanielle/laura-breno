@@ -67,7 +67,7 @@ form.addEventListener("submit", (event) => {
   }
   message.textContent = "";
   const guests = names.map((name, index) => (index + 1) + ". " + name).join("\n");
-  const text = "Olá! Gostaria de confirmar a presença no casamento de Laura e Breno, em 19/12/2026.\n\nPessoas confirmadas:\n" + guests;
+  const text = "Oi, quero confirmar a presença na celebração de casamento.\n\nPessoas confirmadas:\n" + guests;
   const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text);
   window.location.href = url;
 });
