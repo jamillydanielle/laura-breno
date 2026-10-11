@@ -8,3 +8,11 @@
 .intro{background:#7a1304}
 .intro__fallback .site-logo{width:min(86vw,900px)}
 @media(max-width:700px){.site-logo,.intro__fallback .site-logo{width:min(92vw,650px)}}
+
+/* Ajuste da assinatura para caber inteira em desktop e mobile */
+.intro__fallback{width:100%;max-width:100%;padding:clamp(16px,3vw,32px);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:clamp(8px,2vh,20px)}
+.site-logo,.intro__fallback .site-logo,.hero .site-logo{display:block;width:min(72vw,660px);max-width:100%;max-height:60svh;height:auto;margin:0 auto;object-fit:contain}
+.intro__fallback .site-logo{max-height:55svh}
+.hero .site-logo{max-height:50svh}
+@media(max-width:700px){.site-logo,.intro__fallback .site-logo,.hero .site-logo{width:min(85vw,420px);max-height:47svh}.intro__fallback{padding:20px 16px;gap:10px}}
+@media(max-height:650px){.site-logo,.intro__fallback .site-logo,.hero .site-logo{width:min(66vw,480px);max-height:42svh}}
