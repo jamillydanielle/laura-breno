@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Creator: CorelDRAW 2020 (64 Bit) -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="164.754mm" height="84.5194mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 16461.11 8444.63"
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="900" height="396" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="-2500 -500 21461.11 9444.63"
  xmlns:xlink="http://www.w3.org/1999/xlink"
  xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
  <defs>
@@ -27,8 +27,8 @@ viewBox="0 0 16461.11 8444.63"
   <style type="text/css">
    <![CDATA[
     @font-face { font-family:"Brachetto";font-variant:normal;font-style:normal;font-weight:normal;src:url("#FontID0") format(svg)}
-    .fil0 {fill:#FFFFFF}
-    .fil1 {fill:#FFFFFF}
+    .fil0 {fill:#282526}
+    .fil1 {fill:#282526}
     .fnt1 {font-weight:normal;font-size:1863.44px;font-family:'Brachetto'}
     .fnt0 {font-weight:normal;font-size:2425.03px;font-family:'Brachetto'}
    ]]>
