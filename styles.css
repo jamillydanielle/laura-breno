@@ -16,3 +16,26 @@
 .hero .site-logo{max-height:50svh}
 @media(max-width:700px){.site-logo,.intro__fallback .site-logo,.hero .site-logo{width:min(85vw,420px);max-height:47svh}.intro__fallback{padding:20px 16px;gap:10px}}
 @media(max-height:650px){.site-logo,.intro__fallback .site-logo,.hero .site-logo{width:min(66vw,480px);max-height:42svh}}
+
+/* Correção: imagem SVG sem corte causado por max-height + largura fixa */
+.intro__fallback .site-logo,
+.hero .site-logo,
+.site-logo {
+  width: min(72vw, 520px);
+  height: auto;
+  max-width: 100%;
+  max-height: none;
+  object-fit: contain;
+  flex-shrink: 1;
+  margin: 0 auto;
+}
+@media (max-width: 700px) {
+  .intro__fallback .site-logo,
+  .hero .site-logo,
+  .site-logo { width: min(85vw, 390px); max-height: none; }
+}
+@media (max-height: 650px) {
+  .intro__fallback .site-logo,
+  .hero .site-logo,
+  .site-logo { width: min(65vw, 390px); max-height: none; }
+}
