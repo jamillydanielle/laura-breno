@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#6d1f2a">
+<meta name="description" content="Casamento Laura e Breno — 19 de dezembro de 2026">
+<title>Laura & Breno | 19.12.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<section class="intro" id="intro" aria-label="Abertura do convite">
+<video id="introVideo" autoplay muted playsinline preload="metadata"><source src="./assets/abertura.mp4" type="video/mp4"></video>
+<div class="intro__fallback" id="introFallback"><p class="eyebrow">Nosso casamento</p><h1>Laura <em>&</em> Breno</h1><p>19 · 12 · 2026</p></div>
+<button class="skip" id="skipIntro" type="button">Ir para o convite →</button>
+</section>
+<main id="site" class="site" aria-hidden="true">
+<header class="hero section"><div class="ornament">✦</div><p class="eyebrow">Vamos nos casar</p><h1>Laura <em>&</em> Breno</h1><p class="hero__date">19 de dezembro de 2026</p><p class="lead">Criamos este cantinho para compartilhar com você os detalhes de um dia muito especial para nós.</p><a class="button primary" href="#convite">Ver convite</a></header>
+<section class="section cream" aria-label="Contagem regressiva"><p class="eyebrow">Contagem regressiva</p><div class="countdown" id="countdown"><div><strong id="days">--</strong><small>dias</small></div><div><strong id="hours">--</strong><small>horas</small></div><div><strong id="minutes">--</strong><small>min</small></div><div><strong id="seconds">--</strong><small>seg</small></div></div></section>
+<section class="section" id="convite"><p class="eyebrow">Com carinho, para você</p><h2>Nosso convite</h2><p class="lead">Confira todos os detalhes do nosso grande dia.</p><div class="viewer"><object data="./assets/convite.pdf" type="application/pdf" aria-label="Convite de casamento em PDF"><div class="viewer__fallback">O convite em PDF ficará disponível aqui quando o arquivo for adicionado.</div></object></div><p><a class="button outline" href="./assets/convite.pdf" target="_blank" rel="noopener">Abrir convite em PDF</a></p></section>
+<section class="section burgundy" id="informacoes"><p class="eyebrow">Informações</p><h2>O grande dia</h2><div class="cards"><article><span>◇</span><h3>Data</h3><p>19 de dezembro de 2026</p></article><article><span>⌖</span><h3>Local</h3><p>Local a definir</p><small>Endereço e localização serão incluídos aqui.</small></article><article><span>◷</span><h3>Horário</h3><p>Horário a definir</p><small>Horário da cerimônia e recepção em breve.</small></article></div></section>
+<section class="section rsvp" id="confirmar"><p class="eyebrow">Esperamos você</p><h2>Confirme sua presença</h2><p class="lead">A confirmação de presença estará disponível em breve.</p><button class="button outline" id="rsvpButton" type="button">Confirmar presença</button><p class="feedback" id="rsvpMessage" role="status"></p></section>
+<footer><div class="ornament">✦</div><p>Laura <em>&</em> Breno</p><small>19 · 12 · 2026</small></footer>
+</main>
+<script src="./script.js"></script>
+</body>
+</html>
