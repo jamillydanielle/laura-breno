@@ -20,18 +20,49 @@
 .rsvp-form small{display:block;color:var(--muted);font-size:12px;line-height:1.6;margin:8px 0 20px}
 .rsvp-form .button{width:100%}
 .feedback{max-width:450px;line-height:1.6}
+
+/* Animação de abertura usando os SVGs fornecidos */
+.invite-loader{position:fixed;inset:0;z-index:999;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:20px;background:#fff;transition:opacity .4s ease,visibility .4s ease}
+.invite-loader.is-finished{opacity:0;visibility:hidden;pointer-events:none}
+.envelope-stage{width:135px;height:135px;position:relative;display:grid;place-items:center}
+.envelope-stage:before{content:"";position:absolute;inset:0;border:2px solid #eadbd8;border-top-color:var(--wine);border-radius:50%;animation:loading-spin 1.1s linear infinite}
+.envelope-stage img{position:absolute;width:77px;height:79px;object-fit:contain;transition:opacity .35s ease,transform .5s ease}
+.envelope-stage .closed{opacity:1;transform:scale(1)}
+.envelope-stage .opened{opacity:0;transform:scale(.88)}
+.envelope-stage.is-open .closed{opacity:0;transform:scale(.88)}
+.envelope-stage.is-open .opened{opacity:1;transform:scale(1)}
+.invite-loader p{margin:0;font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--muted)}
+.schedule-note{margin:14px auto 0;font-size:13px;line-height:1.65;color:var(--muted);padding:0 16px}
+@keyframes loading-spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.envelope-stage:before{animation:none}.invite-loader{transition:none}.envelope-stage img{transition:none}}
 </style>
 </head>
 <body>
+<div class="invite-loader" id="inviteLoader" role="status" aria-label="Abrindo convite">
+<div class="envelope-stage" id="envelopeStage">
+<img class="closed" src="../assets/envelope-fechado.svg" alt="">
+<img class="opened" src="../assets/envelope-aberto.svg" alt="">
+</div>
+<p>Abrindo convite...</p>
+</div>
 <main>
 <section class="pdf-section" aria-label="Convite de Laura e Breno">
 <object class="pdf-viewer" data="./../assets/Laura%20%26%20Breno%2019.12.26%20-%20Celebra%C3%A7%C3%A3o.pdf#toolbar=0&navpanes=0" type="application/pdf" aria-label="Visualização do convite em PDF">
 <p>Seu navegador não consegue exibir o PDF nesta página. <a href="./../assets/Laura%20%26%20Breno%2019.12.26%20-%20Celebra%C3%A7%C3%A3o.pdf" target="_blank" rel="noopener">Abra o convite aqui.</a></p>
 </object>
+<p class="schedule-note">O horário será confirmado mais próximo da data.</p>
 <a class="pdf-link" href="./../assets/Laura%20%26%20Breno%2019.12.26%20-%20Celebra%C3%A7%C3%A3o.pdf" target="_blank" rel="noopener">Abrir convite em PDF</a>
 </section>
 <section class="rsvp" id="confirmar"><a class="button" href="../confirmar-presenca/" style="text-decoration:none;display:inline-block">Confirmar presença</a></section>
 </main>
 
+<script>
+(() => {
+ const loader=document.getElementById("inviteLoader");
+ const stage=document.getElementById("envelopeStage");
+ window.setTimeout(()=>stage.classList.add("is-open"),750);
+ window.setTimeout(()=>{loader.classList.add("is-finished");window.setTimeout(()=>loader.remove(),450)},2050);
+})();
+</script>
 </body>
 </html>
