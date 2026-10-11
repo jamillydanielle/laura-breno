@@ -79,3 +79,17 @@ body { background:#ffffff; }
 }
 .intro .skip:hover,.intro .skip:focus-visible {background:#651002;border-color:#651002;color:#fff;}
 @media(max-width:700px){.intro .skip{right:16px;bottom:18px;padding:14px 20px;font-size:12px;}}
+
+/* Posição conforme protótipo: botão centralizado abaixo da data */
+.intro .skip {
+  position:absolute;
+  left:50%;
+  right:auto;
+  bottom:clamp(35px,8vh,90px);
+  transform:translateX(-50%);
+  width:min(82vw,360px);
+  justify-content:center;
+  text-align:center;
+  white-space:nowrap;
+}
+@media(max-width:700px){.intro .skip{left:50%;right:auto;bottom:clamp(24px,7vh,64px);width:min(86vw,320px);}}
