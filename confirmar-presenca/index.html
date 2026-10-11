@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>Confirmar presença | Laura & Breno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#7a1304;--ink:#282526;--muted:#625c59}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font-family:Montserrat,Arial,sans-serif}
+main{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:40px 20px}
+.content{width:min(100%,460px)}
+.back{display:inline-block;margin-bottom:40px;color:var(--wine);font-size:13px;text-decoration:none;font-weight:600}
+.back:hover{text-decoration:underline}
+h1{font:600 clamp(40px,9vw,60px)/1.08 "Cormorant Garamond",Georgia,serif;margin:0 0 28px;text-align:center}
+label{display:block;font-size:14px;font-weight:600;margin-bottom:12px}
+textarea{display:block;width:100%;min-height:126px;resize:vertical;border:1px solid #c8beb9;border-radius:14px;padding:16px;font:400 15px/1.65 Montserrat,Arial,sans-serif;color:var(--ink);background:#fff}
+textarea:focus{outline:2px solid var(--wine);outline-offset:2px}
+.button{width:100%;min-height:50px;background:var(--wine);border:1px solid var(--wine);border-radius:999px;color:#fff;font:700 14px Montserrat,Arial,sans-serif;cursor:pointer;margin-top:22px}
+.button:hover{background:#651002}
+.feedback{color:var(--wine);font-size:13px;line-height:1.5;min-height:0;margin:12px 0 0;text-align:center}
+@media(max-width:600px){main{align-items:flex-start;padding-top:45px}.back{margin-bottom:55px}}
+</style>
+</head>
+<body>
+<main>
+<div class="content">
+<a class="back" href="../ver-convite/">← Voltar ao convite</a>
+<h1>Confirmar presença</h1>
+<form id="confirmationForm">
+<label for="guestNames">Nome das pessoas que vão participar</label>
+<textarea id="guestNames" name="guestNames" required maxlength="600" placeholder="Ex.: Maria, João e Ana"></textarea>
+<button class="button" type="submit">Confirmar</button>
+<p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+</form>
+</div>
+</main>
+<script>
+const WHATSAPP_NUMBER = "553597757822";
+const form = document.getElementById("confirmationForm");
+const namesField = document.getElementById("guestNames");
+const feedback = document.getElementById("feedback");
+form.addEventListener("submit", event => {
+  event.preventDefault();
+  const names = namesField.value.trim().split(/\s*(?:,|;|\n|\s+e\s+)\s*/i).map(name => name.trim()).filter(Boolean);
+  if (!names.length) {
+    feedback.textContent = "Por favor, informe o nome de quem vai participar.";
+    namesField.focus();
+    return;
+  }
+  const people = names.map((name, index) => (index + 1) + ". " + name).join("\n");
+  const message = "Oi, quero confirmar a presença na celebração de casamento.\n\nPessoas confirmadas:\n" + people;
+  window.location.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+});
+</script>
+</body>
+</html>
